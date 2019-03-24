@@ -1,0 +1,27 @@
+{
+  "name": "gpmdp-nodejs-websocket",
+  "version": "1.0.0",
+  "description": "GPMDP NodeJS-Websocket-Client",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FATEx0/GPMDP-NodeJS-Websocket.git"
+  },
+  "keywords": [
+    "GPMDP",
+    "Websocket",
+    "NodeJS"
+  ],
+  "author": "FATEx0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FATEx0/GPMDP-NodeJS-Websocket/issues"
+  },
+  "homepage": "https://github.com/FATEx0/GPMDP-NodeJS-Websocket#readme",
+  "dependencies": {
+    "websocket": "^1.0.28"
+  }
+}
