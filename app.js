@@ -1,11 +1,11 @@
 var WebSocketClient = require('websocket').client;
  
 var client = new WebSocketClient();
- 
+
 client.on('connectFailed', function(error) {
     console.log('Connect Error: ' + error.toString());
 });
- 
+
 client.on('connect', function(connection) {
     console.log('WebSocket Client Connected');
     connection.on('error', function(error) {
@@ -14,9 +14,24 @@ client.on('connect', function(connection) {
     connection.on('close', function() {
         console.log('echo-protocol Connection Closed');
     });
+
     connection.on('message', function(message) {
         if (message.type === 'utf8') {
-            console.log("Received: '" + message.utf8Data + "'");
+            
+            const regex = /"channel":"track",/gm;
+let m;
+
+while ((m = regex.exec(message.utf8Data)) !== null) {
+    // This is necessary to avoid infinite loops with zero-width matches
+    if (m.index === regex.lastIndex) {
+        regex.lastIndex++;
+    }
+    
+    // The result can be accessed through the `m`-variable.
+    m.forEach((match, groupIndex) => {
+        console.log(message.utf8Data);
+    });
+            }
         }
     });
     
